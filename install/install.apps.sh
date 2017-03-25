@@ -26,6 +26,7 @@ declare APT_PHP=(
 declare APT_DEV_UTILS=( 
   "git" 
   "mysql-workbench"
+  "build-essential"
 )
 
 # 3rd party not from apt
