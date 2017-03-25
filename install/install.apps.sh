@@ -87,12 +87,24 @@ function www_install {
 }
 
 function node_install {
-  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-  sudo apt-get install -y nodejs 
+  url="https://deb.nodesource.com/setup_6.x"
+  confirm_msg="Install node.js?"
+  user_confirm "$url" "$confirm_msg"
+
+  if $install ; then
+    curl -sL $url | sudo -E bash -
+    sudo apt-get install -y nodejs 
+  fi
 }
 
 function composer_install {
-  curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+  url="https://getcomposer.org/installer"
+  confirm_msg="Install Composer?"
+  user_confirm "$url" "$confirm_msg"
+
+  if $install ; then
+    curl -sS $url | sudo php -- --install-dir=/usr/local/bin --filename=composer
+  fi
 }
 
 sudo apt-get update
