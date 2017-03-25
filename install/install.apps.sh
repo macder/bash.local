@@ -86,6 +86,15 @@ function www_install {
   fi  
 }
 
+function node_install {
+  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  sudo apt-get install -y nodejs 
+}
+
+function composer_install {
+  curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+}
+
 sudo apt-get update
 
 apt_install APT_FONTS
@@ -94,3 +103,5 @@ apt_install APT_PHP
 apt_install APT_DEV_UTILS
 
 www_install ALT_PACKS
+node_install
+composer_install
