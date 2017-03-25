@@ -117,3 +117,5 @@ apt_install APT_DEV_UTILS
 www_install ALT_PACKS
 node_install
 composer_install
+
+echo "Done. If you installed fonts, run sudo fc-cache -fv"
