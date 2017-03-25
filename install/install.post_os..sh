@@ -23,6 +23,20 @@ declare APT_DRIVERS=(
   "nvidia-375"
 )
 
+declare BLACKLIST=(
+  "snd_hda_codec_hdmi"
+  "joydev"
+  "eeepc_wmi"
+  "asus_wmi"
+  "snd_seq_midi"
+  "snd_seq_midi_event"
+  "snd_rawmid"
+  "snd_seq"
+  "snd_seq_device"
+  "fjes"
+  "mac_hid"
+)
+
 function grub_text {
   file="/etc/default/grub"
 
@@ -47,18 +61,7 @@ function network {
 function modprobe_blacklist {
   sudo echo "/etc/modprobe.d/intel.conf" > /etc/modprobe.d/intel.conf
 
-  blacklist="blacklist snd_hda_codec_hdmi
-  blacklist joydev
-  blacklist eeepc_wmi
-  blacklist asus_wmi
-  blacklist snd_seq_midi
-  blacklist snd_seq_midi_event
-  blacklist snd_rawmid
-  blacklist snd_seq
-  blacklist snd_seq_device
-  blacklist fjes
-  blacklist mac_hid"
-
-  sudo echo -e "$blacklist" >> /etc/modprobe.d/blacklist.conf
+  # TODO - bring in the blacklist array
+  # sudo echo -e "$blacklist" >> /etc/modprobe.d/blacklist.conf
   sudo update-initramfs -u
 }
