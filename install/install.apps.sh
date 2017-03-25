@@ -37,6 +37,7 @@ declare -A ALT_PACKS=(
   ["gitkraken-amd64.deb"]="https://release.gitkraken.com/linux/"
   ["dropbox_2015.10.28_amd64.deb"]="https://www.dropbox.com/download?dl=packages/ubuntu/"
   ["slack-desktop-2.5.2-amd64.deb"]="https://downloads.slack-edge.com/linux_releases/"
+  ["skypeforlinux-64-alpha.deb"]="https://go.skype.com/"
 )
 
 # @param array Packages for install
