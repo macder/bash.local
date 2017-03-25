@@ -26,6 +26,7 @@ declare APT_PHP=(
 declare APT_DEV_UTILS=( 
   "git" 
   "mysql-workbench"
+  "build-essential"
 )
 
 # 3rd party not from apt
@@ -62,7 +63,7 @@ function apt_install {
   user_confirm "$packs" "$confirm_msg"
 
   if $install ; then
-    sudo apt-get install $packs
+    sudo apt-get install -y $packs
   fi
 }
 
@@ -85,6 +86,27 @@ function www_install {
   fi  
 }
 
+function node_install {
+  url="https://deb.nodesource.com/setup_6.x"
+  confirm_msg="Install node.js?"
+  user_confirm "$url" "$confirm_msg"
+
+  if $install ; then
+    curl -sL $url | sudo -E bash -
+    sudo apt-get install -y nodejs 
+  fi
+}
+
+function composer_install {
+  url="https://getcomposer.org/installer"
+  confirm_msg="Install Composer?"
+  user_confirm "$url" "$confirm_msg"
+
+  if $install ; then
+    curl -sS $url | sudo php -- --install-dir=/usr/local/bin --filename=composer
+  fi
+}
+
 sudo apt-get update
 
 apt_install APT_FONTS
@@ -93,3 +115,7 @@ apt_install APT_PHP
 apt_install APT_DEV_UTILS
 
 www_install ALT_PACKS
+node_install
+composer_install
+
+echo "Done. If you installed fonts, run sudo fc-cache -fv"
