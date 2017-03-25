@@ -35,6 +35,7 @@ declare -A ALT_PACKS=(
   ["virtualbox-5.1_5.1.18-114002~Ubuntu~xenial_amd64.deb"]="http://download.virtualbox.org/virtualbox/5.1.18/"
   ["vagrant_1.9.3_x86_64.deb"]="https://releases.hashicorp.com/vagrant/1.9.3/"
   ["gitkraken-amd64.deb"]="https://release.gitkraken.com/linux/"
+  ["dropbox_2015.10.28_amd64.deb"]="https://www.dropbox.com/download?dl=packages/ubuntu/"
 )
 
 # @param array Packages for install
