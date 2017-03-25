@@ -29,6 +29,15 @@ function grub_text {
   sudo echo "GRUB_GFXPAYLOAD=text" >> $file
 
   sudo nano $file
-
   sudo update-grub
+}
+
+function network {
+  file="/etc/network/interfaces"
+
+  sudo sed -i 's/auto eno1/allow-hotplug eno1/g' $file
+  sudo nano $file
+
+  sudo systemctl disable network-manger
+  sudo systemctl disable networking.service
 }
