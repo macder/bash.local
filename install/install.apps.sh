@@ -36,6 +36,7 @@ declare -A ALT_PACKS=(
   ["vagrant_1.9.3_x86_64.deb"]="https://releases.hashicorp.com/vagrant/1.9.3/"
   ["gitkraken-amd64.deb"]="https://release.gitkraken.com/linux/"
   ["dropbox_2015.10.28_amd64.deb"]="https://www.dropbox.com/download?dl=packages/ubuntu/"
+  ["slack-desktop-2.5.2-amd64.deb"]="https://downloads.slack-edge.com/linux_releases/"
 )
 
 # @param array Packages for install
