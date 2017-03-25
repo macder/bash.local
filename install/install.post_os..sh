@@ -43,3 +43,22 @@ function network {
   sudo systemctl disable network-manger
   sudo systemctl disable networking.service
 }
+
+function modprobe_blacklist {
+  sudo echo "/etc/modprobe.d/intel.conf" > /etc/modprobe.d/intel.conf
+
+  blacklist="blacklist snd_hda_codec_hdmi
+  blacklist joydev
+  blacklist eeepc_wmi
+  blacklist asus_wmi
+  blacklist snd_seq_midi
+  blacklist snd_seq_midi_event
+  blacklist snd_rawmid
+  blacklist snd_seq
+  blacklist snd_seq_device
+  blacklist fjes
+  blacklist mac_hid"
+
+  sudo echo -e "$blacklist" >> /etc/modprobe.d/blacklist.conf
+  sudo update-initramfs -u
+}
