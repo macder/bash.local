@@ -63,7 +63,7 @@ function apt_install {
   user_confirm "$packs" "$confirm_msg"
 
   if $install ; then
-    sudo apt-get install $packs
+    sudo apt-get install -y $packs
   fi
 }
 
