@@ -1,5 +1,4 @@
 #!/bin/bash
-# add kernel mods to blacklist
 
 gksudo gedit /etc/modprobe.d/blacklist.conf
 
