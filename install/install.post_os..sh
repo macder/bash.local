@@ -2,6 +2,8 @@
 
 # Install system packages after installing ubuntu base (mini.iso)
 
+# this is a WIP
+
 declare APT_DESKTOP=( 
   # "--no-install-recommends ubuntu-gnome-desktop"
   "xserver-xorg-legacy"
