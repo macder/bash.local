@@ -27,6 +27,7 @@ declare APT_DEV_UTILS=(
   "git" 
   "mysql-workbench"
   "build-essential"
+  "filezilla"
 )
 
 # 3rd party not from apt
