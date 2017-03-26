@@ -18,6 +18,7 @@ declare APT_UTILS=(
 )
 
 declare APT_DRIVERS=(
+  "hwdata"
   "intel-microcode"
   "iucode-tool"
   "nvidia-375"
