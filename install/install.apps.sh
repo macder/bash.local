@@ -28,6 +28,7 @@ declare APT_DEV_UTILS=(
   "mysql-workbench"
   "build-essential"
   "filezilla"
+  "virtualbox-guest-dkms"
 )
 
 # 3rd party not from apt
@@ -113,10 +114,13 @@ sudo apt-get update
 apt_install APT_FONTS
 apt_install APT_SYS_UTILS
 apt_install APT_PHP
-apt_install APT_DEV_UTILS
 
 www_install ALT_PACKS
+apt_install APT_DEV_UTILS
+
+
 node_install
 composer_install
+
 
 echo "Done. If you installed fonts, run sudo fc-cache -fv"
