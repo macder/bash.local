@@ -63,8 +63,11 @@ function network {
 function modprobe_blacklist {
   echo "options snd_hda_intel enable=1,0" > /etc/modprobe.d/intel.conf
 
-  # TODO - bring in the blacklist array
-  # echo -e "$blacklist" >> /etc/modprobe.d/blacklist.conf
+  for element in ${BLACKLIST[@]}
+  do
+    echo -e "blacklist "$element >> /etc/modprobe.d/blacklist.conf
+  done  
+
   update-initramfs -u
 }
 
